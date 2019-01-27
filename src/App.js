@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import marked from 'marked';
 
-const placeholder = `
-# Welcome to my React Markdown Previewer!
+const placeholder = 
+`# Welcome to my React Markdown Previewer!
 
 ## This is a sub-heading...
 ### And here's some other cool stuff:
@@ -53,12 +53,10 @@ And here. | Okay. | I think we get it.
 const Editor = (props) => {
   return(
     <div className="col-md-6">
-      <div className="container">
-        <textarea id="editor"
-          value={props.value}
-          handleChange={props.handleChange}
-        />
-      </div>
+      <textarea id="editor"
+        value={props.value}
+        handleChange={props.handleChange}
+      />
     </div>
   );
 };
@@ -66,7 +64,7 @@ const Editor = (props) => {
 const Previewer = (props) => {
   return(
     <div className="col-md-6">
-      <div id="preview" dangerouslySetInnerHTML={props.data}>
+      <div id="preview" class="container" dangerouslySetInnerHTML={props.data}>
       </div>
     </div>
   );

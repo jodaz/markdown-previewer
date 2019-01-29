@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import marked from 'marked';
 
-const placeholder = `
-# Welcome to my React Markdown Previewer!
+const placeholder = 
+`# Welcome to my React Markdown Previewer!
 
 ## This is a sub-heading...
 ### And here's some other cool stuff:
@@ -47,16 +47,15 @@ And here. | Okay. | I think we get it.
 - Even if you use dashes or asterisks.
 * And last but not least, let's not forget embedded images:
 
-![React Logo w/ Text](https://goo.gl/Umyytc)
-`
+![React Logo w/ Text](https://goo.gl/Umyytc)`
 
 const Editor = (props) => {
   return(
     <div className="col-md-6">
       <div className="container">
         <textarea id="editor"
-          value={props.value}
-          handleChange={props.handleChange}
+          value={props.markdown}
+          onChange={props.onChange}
         />
       </div>
     </div>
@@ -75,19 +74,19 @@ const Previewer = (props) => {
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: placeholder};
+    this.state = {markdown: placeholder};
 
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
     this.setState({
-      value: event.target.value,
+      markdown: event.target.value,
     });
   }
   
   getRawHtml() {
-    let rawHtml = marked(this.state.value, {sanitize: true});
+    let rawHtml = marked(this.state.markdown, {sanitize: true});
     return { __html: rawHtml };
   }
 
@@ -95,7 +94,10 @@ class App extends Component {
     return (
       <div className="App container">
         <div className="row">
-          <Editor value={this.state.value} handleChange={this.state.handleChange} />
+          <Editor
+            markdown={this.state.markdown}
+            onChange={this.handleChange} 
+          />
           <Previewer data={this.getRawHtml()} />
         </div>
       </div>

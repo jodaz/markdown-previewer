@@ -2,6 +2,55 @@ import React, { Component } from 'react';
 import './App.css';
 import marked from 'marked';
 
+const Editor = (props) => {
+  return(
+    <div className="col-md-6">
+      <textarea id="editor" className="editor"
+        value={props.value}
+        handleChange={props.handleChange}
+      />
+    </div>
+  );
+};
+
+const Previewer = (props) => {
+  return(
+    <div className="col-md-6">
+      <div id="preview" className="previewer" dangerouslySetInnerHTML={props.data}>
+      </div>
+    </div>
+  );
+}
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: placeholder};
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({
+      value: event.target.value,
+    });
+  }
+  
+  getRawHtml() {
+    let rawHtml = marked(this.state.value, {sanitize: true});
+    return { __html: rawHtml };
+  }
+
+  render() {
+    return (
+      <div className="row h-100 align-items-center">
+        <Editor value={this.state.value} handleChange={this.state.handleChange} />
+        <Previewer data={this.getRawHtml()} />
+      </div>
+    );
+  }
+};
+
 const placeholder = 
 `# Welcome to my React Markdown Previewer!
 
@@ -49,56 +98,5 @@ And here. | Okay. | I think we get it.
 
 ![React Logo w/ Text](https://goo.gl/Umyytc)
 `
-
-const Editor = (props) => {
-  return(
-    <div className="col-md-6">
-      <textarea id="editor"
-        value={props.value}
-        handleChange={props.handleChange}
-      />
-    </div>
-  );
-};
-
-const Previewer = (props) => {
-  return(
-    <div className="col-md-6">
-      <div id="preview" class="container" dangerouslySetInnerHTML={props.data}>
-      </div>
-    </div>
-  );
-}
-
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: placeholder};
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({
-      value: event.target.value,
-    });
-  }
-  
-  getRawHtml() {
-    let rawHtml = marked(this.state.value, {sanitize: true});
-    return { __html: rawHtml };
-  }
-
-  render() {
-    return (
-      <div className="App container">
-        <div className="row">
-          <Editor value={this.state.value} handleChange={this.state.handleChange} />
-          <Previewer data={this.getRawHtml()} />
-        </div>
-      </div>
-    );
-  }
-};
 
 export default App;

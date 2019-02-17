@@ -1,10 +1,19 @@
 html, body, div, span, h1, h2, h3,p, ol, ul, li, code {
-  padding: 0;
+  margin: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
 }
+:root {
+  --primary-color: #E91E63;
+  --dark-primary-color: #C2185B;
+  --primary-text: #212121;
+  --secondary-text: #757575;
+  --text: #FFFFFF;
+  --divider: #BDBDBD;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -12,7 +21,4 @@ body {
   height: 100vh;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-}
-:root {
-
 }

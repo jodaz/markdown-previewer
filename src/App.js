@@ -22,6 +22,16 @@ const Previewer = (props) => {
   );
 }
 
+const Header = () => {
+  return(
+    <div className="row header">
+      <div className="col-12">
+        <h1 className="text-center">Markdown Previewer</h1>
+      </div>
+    </div>
+  );
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -43,12 +53,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="row h-100 align-items-center">
-        <Editor
-          markdown={this.state.markdown}
-          onChange={this.handleChange} 
-        />
-        <Previewer data={this.getRawHtml()} />
+      <div className="container h-100">
+        <Header />
+        <div className="row h-100 align-items-center">
+          <Editor
+            markdown={this.state.markdown}
+            onChange={this.handleChange} 
+          />
+          <Previewer data={this.getRawHtml()} />
+        </div>
       </div>
     );
   }

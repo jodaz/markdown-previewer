@@ -5,6 +5,7 @@ import marked from 'marked';
 const Editor = (props) => {
   return(
     <div id="editor" className="col-md-6">
+      <ComponentHeader name={{__html: 'Editor'}} />
       <textarea id="editor" className="editor"
         value={props.markdown}
         onChange={props.onChange}
@@ -16,8 +17,17 @@ const Editor = (props) => {
 const Previewer = (props) => {
   return(
     <div className="col-md-6">
+      <ComponentHeader name={{__html: 'Previewer'}} />
       <div id="preview" className="previewer" dangerouslySetInnerHTML={props.data}>
       </div>
+    </div>
+  );
+}
+
+const ComponentHeader = (props) => {
+  return(
+    <div className="bar-toggle">
+      <h2 className="text-center" dangerouslySetInnerHTML={props.name}></h2>
     </div>
   );
 }

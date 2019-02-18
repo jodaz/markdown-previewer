@@ -17,6 +17,11 @@
   margin-top: 30px;
 }
 
+.maximized {
+  height: 0px;
+  transition: 0.5s;
+}
+
 @media (min-width: 1200px) {
   .editor,
   .previewer {

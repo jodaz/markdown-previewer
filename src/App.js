@@ -5,8 +5,8 @@ import marked from 'marked';
 const Editor = (props) => {
   return(
     <div id="editor" className="col-md-6">
-      <ComponentHeader name={{__html: 'Editor'}} />
-      <textarea id="editor" className="editor"
+      <ComponentHeader name={'Editor'} onClick={props.toggle}/>
+      <textarea id="editor" className={props.max}
         value={props.markdown}
         onChange={props.onChange}
       />
@@ -17,8 +17,10 @@ const Editor = (props) => {
 const Previewer = (props) => {
   return(
     <div className="col-md-6">
-      <ComponentHeader name={{__html: 'Previewer'}} />
-      <div id="preview" className="previewer" dangerouslySetInnerHTML={props.data}>
+      <ComponentHeader name='Previewer' onClick={props.toggle} />
+      <div id="preview" 
+        className={props.max}
+        dangerouslySetInnerHTML={props.data}>
       </div>
     </div>
   );
@@ -26,8 +28,8 @@ const Previewer = (props) => {
 
 const ComponentHeader = (props) => {
   return(
-    <div className="bar-toggle">
-      <h2 className="text-center" dangerouslySetInnerHTML={props.name}></h2>
+    <div className="bar-toggle" onClick={props.onClick}>
+      <h2 className="text-center">{props.name}</h2>
     </div>
   );
 }
@@ -35,8 +37,14 @@ const ComponentHeader = (props) => {
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {markdown: placeholder};
+    this.state = {
+      markdown: placeholder,
+      toggleEditor: true,
+      togglePreviewer: true
+    };
 
+    this.toggleEditor = this.toggleEditor.bind(this);
+    this.togglePreviewer = this.togglePreviewer.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -45,6 +53,18 @@ class App extends Component {
       markdown: event.target.value,
     });
   }
+
+  toggleEditor() {
+    this.setState( state => ({
+          toggleEditor: !state.toggleEditor
+        }));
+  }
+
+  togglePreviewer() {
+    this.setState( state => ({
+          togglePreviewer: !state.togglePreviewer
+        }));
+  }
   
   getRawHtml() {
     let rawHtml = marked(this.state.markdown, {sanitize: true});
@@ -52,13 +72,26 @@ class App extends Component {
   }
 
   render() {
+    const togEditor = 
+      this.state.toggleEditor ? 'editor' : 'editor maximized';
+    const togPreviewer = 
+      this.state.togglePreviewer ? 'previewer' : 'previewer maximized';
+
     return (
       <div className="row h-100 align-items-center">
+
         <Editor
           markdown={this.state.markdown}
-          onChange={this.handleChange} 
+          onChange={this.handleChange}
+          toggle={this.toggleEditor}
+          max={togEditor}
         />
-        <Previewer data={this.getRawHtml()} />
+        <Previewer 
+          data={this.getRawHtml()} 
+          toggle={this.togglePreviewer}
+          max={togPreviewer}
+        />
+
       </div>
     );
   }

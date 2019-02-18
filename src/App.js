@@ -26,10 +26,21 @@ const Previewer = (props) => {
   );
 }
 
+
 const ComponentHeader = (props) => {
   return(
     <div className="bar-toggle" onClick={props.onClick}>
       <h2 className="text-center">{props.name}</h2>
+    </div>
+  );
+}
+
+const AppHeader = () => {
+  return(
+    <div className="row header">
+      <div className="col-12">
+        <h1 className="text-center">Markdown Previewer</h1>
+      </div>
     </div>
   );
 }
@@ -78,20 +89,21 @@ class App extends Component {
       this.state.togglePreviewer ? 'previewer' : 'previewer maximized';
 
     return (
-      <div className="row h-100 align-items-center">
-
-        <Editor
-          markdown={this.state.markdown}
-          onChange={this.handleChange}
-          toggle={this.toggleEditor}
-          max={togEditor}
-        />
-        <Previewer 
-          data={this.getRawHtml()} 
-          toggle={this.togglePreviewer}
-          max={togPreviewer}
-        />
-
+      <div className="container h-100">
+        <AppHeader />
+        <div className="row h-75 align-items-center">
+          <Editor
+            markdown={this.state.markdown}
+            onChange={this.handleChange}
+            toggle={this.toggleEditor}
+            max={togEditor}
+          />
+          <Previewer 
+            data={this.getRawHtml()} 
+            toggle={this.togglePreviewer}
+            max={togPreviewer}
+          />
+        </div>
       </div>
     );
   }

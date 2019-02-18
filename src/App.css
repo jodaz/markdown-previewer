@@ -1,6 +1,9 @@
-.App-inner {
-  padding: 0.6rem;
+.header {
+  font-family: "Roboto Mono", mono;
+  font-size: 1.3rem;
+  padding-top: 1.1rem;
 }
+
 .editor,
 .previewer {
   margin-bottom: 30px;
@@ -32,9 +35,7 @@
 }
 
 @media (min-width: 1200px) {
-  .editor,
-  .previewer {
-    height: 500px;
-    margin-top: 0px;
+  .header {
+    font-size: 1.6rem;
   }
 }

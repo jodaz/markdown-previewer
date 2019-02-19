@@ -4,7 +4,7 @@ import marked from 'marked';
 
 const Editor = (props) => {
   return(
-    <div id="editor" className="col-md-12 col-lg-6">
+    <div id="editor" className="col-md-12">
       <ComponentHeader name={'Editor'} onClick={props.toggle}/>
       <textarea id="editor" className={props.max}
         value={props.markdown}
@@ -16,7 +16,7 @@ const Editor = (props) => {
 
 const Previewer = (props) => {
   return(
-    <div className="col-md-12 col-lg-6">
+    <div id="previewer" className="col-md-12">
       <ComponentHeader name='Previewer' onClick={props.toggle} />
       <div id="preview" 
         className={props.max}
@@ -113,7 +113,7 @@ const placeholder =
 ## This is a sub-heading...
 ### And here's some other cool stuff:
   
-Heres some code, \`<div></div>\`, between 2 backticks.
+Here's some code, \`<div></div>\`, between 2 backticks.
 
 \`\`\`
 // this is multi-line code:
@@ -146,7 +146,7 @@ And here. | Okay. | I think we get it.
         - That look like this.
 
 
-1. And there are numbererd lists too.
+1. And there are numbered lists too.
 1. Use just 1s if you want! 
 1. But the list goes on...
 - Even if you use dashes or asterisks.

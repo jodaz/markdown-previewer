@@ -1,13 +1,25 @@
+#root {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
 .header {
   font-family: "Roboto Mono", mono;
-  font-size: 1.3rem;
+  font-size: 1.73rem;
   padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+  width: 100%;
+  text-align: center;
+  color: var(--text);
 }
 
 .editor,
 .previewer {
   margin-bottom: 30px;
   transition: 0.37s;
+  background: var(--text);
+  color: var(--primary-text);
+  box-shadow: 0px 10px 12px 0px rgba(0,0,0,0.59);
+  padding: 3px 12px;
 }
   .editor {
     width: 100%;
@@ -15,16 +27,29 @@
     font-family: "Roboto Mono", mono;
     letter-spacing: 1px;
     resize: none;
+    border: 0;
   }
+    #editor .bar-toggle {
+      background: var(--toolbar-one);
+      font-size: 1.32rem;
+      text-transform: uppercase;
+      color: var(--text);
+    }
   .previewer {
     width: 100%;
     height: 300px;
     overflow: scroll;
     overflow-x: hidden;
   }
+    #previewer .bar-toggle {
+      background: var(--toolbar-two);
+      font-size: 1.32rem;
+      text-transform: uppercase;
+      color: var(--text);
+    }
 
 .maximized {
-  height: 0;
+  height: 0 !important;
   padding: 0;
   display: block;
   border: 0;
@@ -32,10 +57,33 @@
 
 .bar-toggle {
   width: 100%;
+  color: var(--text);
+  padding-top: 0.53rem;
+  padding-bottom: 0.43rem;
+  font-weight: 700;
+  font-size: 1.23rem;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 992px) {
+  .editor,
+  .previewer {
+    height: 500px;
+  }
+  .maximized {
+    height: 130px !important;
+    padding: 5px 12px;
+  }
 }
 
 @media (min-width: 1200px) {
   .header {
     font-size: 1.6rem;
+  }
+  .previewer {
+    height: 450px;
+  }
+  .editor {
+    height: 450px;
   }
 }

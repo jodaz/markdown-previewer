@@ -4,7 +4,7 @@ import marked from 'marked';
 
 const Editor = (props) => {
   return(
-    <div id="editor" className="col-md-6">
+    <div id="editor" className="col-md-12 col-lg-6">
       <ComponentHeader name={'Editor'} onClick={props.toggle}/>
       <textarea id="editor" className={props.max}
         value={props.markdown}
@@ -16,7 +16,7 @@ const Editor = (props) => {
 
 const Previewer = (props) => {
   return(
-    <div className="col-md-6">
+    <div className="col-md-12 col-lg-6">
       <ComponentHeader name='Previewer' onClick={props.toggle} />
       <div id="preview" 
         className={props.max}
@@ -37,10 +37,8 @@ const ComponentHeader = (props) => {
 
 const AppHeader = () => {
   return(
-    <div className="row header">
-      <div className="col-12">
-        <h1 className="text-center">Markdown Previewer</h1>
-      </div>
+    <div className="col header">
+      <h1 className="text-center">Markdown Previewer</h1>
     </div>
   );
 }

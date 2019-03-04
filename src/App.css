@@ -60,10 +60,14 @@
   color: var(--text);
   padding-top: 0.53rem;
   padding-bottom: 0.43rem;
-  font-weight: 700;
-  font-size: 1.23rem;
-  letter-spacing: 1px;
 }
+  .bar-toggle h2 {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 1.1px;
+  }
 
 @media (min-width: 992px) {
   .editor,

@@ -32,9 +32,6 @@
   }
     #editor .bar-toggle {
       background: var(--toolbar-one);
-      font-size: 1.32rem;
-      text-transform: uppercase;
-      color: var(--text);
     }
   .previewer {
     width: 100%;
@@ -44,11 +41,19 @@
   }
     #previewer .bar-toggle {
       background: var(--toolbar-two);
-      font-size: 1.32rem;
-      text-transform: uppercase;
-      color: var(--text);
     }
-
+.bar-toggle {
+  font-size: 1.32rem;
+  text-transform: uppercase;
+  color: var(--text);
+}
+  .bar-toggle .text-wrapper {
+    display: inline-block;
+    width: 92%;
+  }
+    .bar-toggle .text-wrapper h2 {
+      padding-left: 1.3rem;
+    }
 .maximized {
   height: 0 !important;
   padding: 0;
@@ -61,6 +66,7 @@
   color: var(--text);
   padding-top: 0.53rem;
   padding-bottom: 0.43rem;
+  cursor: pointer;
 }
   .bar-toggle h2 {
     font-weight: 700;
@@ -78,6 +84,9 @@
   .maximized {
     height: 130px !important;
     padding: 5px 12px;
+  }
+  .bar-toggle .text-wrapper {
+    width: 96%;
   }
 }
 

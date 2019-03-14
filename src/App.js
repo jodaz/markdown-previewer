@@ -5,8 +5,8 @@ import marked from 'marked';
 const Editor = (props) => {
   return(
     <div id="editor" className="col-md-12">
-      <ComponentHeader name={'Editor'} onClick={props.toggle}/>
-      <textarea id="editor" className={props.max}
+      <ComponentHeader name={'Editor'} onClick={props.toggle} icon={props.icon}/>
+      <textarea id="editor" className={props.componentStyles}
         value={props.markdown}
         onChange={props.onChange}
       />
@@ -17,9 +17,9 @@ const Editor = (props) => {
 const Previewer = (props) => {
   return(
     <div id="previewer" className="col-md-12">
-      <ComponentHeader name='Previewer' onClick={props.toggle} />
+      <ComponentHeader name='Previewer' onClick={props.toggle} icon={props.icon}/>
       <div id="preview" 
-        className={props.max}
+        className={props.componentStyles}
         dangerouslySetInnerHTML={props.data}>
       </div>
     </div>
@@ -30,7 +30,10 @@ const Previewer = (props) => {
 const ComponentHeader = (props) => {
   return(
     <div className="bar-toggle" onClick={props.onClick}>
-      <h2 className="text-center">{props.name}</h2>
+      <div className="text-wrapper">
+        <h2 className="text-center">{props.name}</h2>
+      </div>
+      <i className={props.icon}></i>
     </div>
   );
 }
@@ -65,14 +68,14 @@ class App extends Component {
 
   toggleEditor() {
     this.setState( state => ({
-          toggleEditor: !state.toggleEditor
-        }));
+      toggleEditor: !state.toggleEditor
+    }));
   }
 
   togglePreviewer() {
     this.setState( state => ({
-          togglePreviewer: !state.togglePreviewer
-        }));
+      togglePreviewer: !state.togglePreviewer
+    }));
   }
   
   getRawHtml() {
@@ -85,6 +88,10 @@ class App extends Component {
       this.state.toggleEditor ? 'editor' : 'editor maximized';
     const togPreviewer = 
       this.state.togglePreviewer ? 'previewer' : 'previewer maximized';
+    const togEditorIcon =
+      this.state.toggleEditor ? 'fas fa-chevron-down' : 'fas fa-minus';
+    const togPreviewerIcon =
+      this.state.togglePreviewer ? 'fas fa-chevron-down' : 'fas fa-minus';
 
     return (
       <div className="container h-100">
@@ -94,12 +101,14 @@ class App extends Component {
             markdown={this.state.markdown}
             onChange={this.handleChange}
             toggle={this.toggleEditor}
-            max={togEditor}
+            componentStyles={togEditor}
+            icon={togEditorIcon}
           />
           <Previewer 
             data={this.getRawHtml()} 
             toggle={this.togglePreviewer}
-            max={togPreviewer}
+            componentStyles={togPreviewer}
+            icon={togPreviewerIcon}
           />
         </div>
       </div>

@@ -4,14 +4,15 @@
 }
 .header {
   font-family: "Roboto Mono", mono;
-  font-size: 1.73rem;
   padding-top: 1.1rem;
   padding-bottom: 1.1rem;
   width: 100%;
   text-align: center;
   color: var(--text);
 }
-
+  .header .text-center {
+    font-size: 1.45rem;
+  }
 .editor,
 .previewer {
   margin-bottom: 30px;
@@ -81,7 +82,7 @@
 }
 
 @media (min-width: 1200px) {
-  .header {
+  .header .text-center {
     font-size: 1.6rem;
   }
   .previewer {

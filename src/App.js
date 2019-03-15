@@ -89,9 +89,9 @@ class App extends Component {
     const togPreviewer = 
       this.state.togglePreviewer ? 'previewer' : 'previewer maximized';
     const togEditorIcon =
-      this.state.toggleEditor ? 'fas fa-chevron-down' : 'fas fa-minus';
+      this.state.toggleEditor ? 'fa fa-chevron-down' : 'fa fa-minus';
     const togPreviewerIcon =
-      this.state.togglePreviewer ? 'fas fa-chevron-down' : 'fas fa-minus';
+      this.state.togglePreviewer ? 'fa fa-chevron-down' : 'fa fa-minus';
 
     return (
       <div className="container h-100">

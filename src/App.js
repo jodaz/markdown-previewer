@@ -1,50 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import marked from 'marked';
-
-const Editor = (props) => {
-  return(
-    <div id="editor" className="col-md-12">
-      <ComponentHeader name={'Editor'} onClick={props.toggle} icon={props.icon}/>
-      <textarea id="editor" className={props.componentStyles}
-        value={props.markdown}
-        onChange={props.onChange}
-      />
-    </div>
-  );
-};
-
-const Previewer = (props) => {
-  return(
-    <div id="previewer" className="col-md-12">
-      <ComponentHeader name='Previewer' onClick={props.toggle} icon={props.icon}/>
-      <div id="preview" 
-        className={props.componentStyles}
-        dangerouslySetInnerHTML={props.data}>
-      </div>
-    </div>
-  );
-}
-
-
-const ComponentHeader = (props) => {
-  return(
-    <div className="bar-toggle" onClick={props.onClick}>
-      <div className="text-wrapper">
-        <h2 className="text-center">{props.name}</h2>
-      </div>
-      <i className={props.icon}></i>
-    </div>
-  );
-}
-
-const AppHeader = () => {
-  return(
-    <div className="col header">
-      <h1 className="text-center">Markdown Previewer</h1>
-    </div>
-  );
-}
+import AppHeader from './components/AppHeader';
+import Editor from './components/Editor';
+import ComponentHeader from './components/ComponentHeader';
+import Previewer from './components/Previewer';
 
 class App extends Component {
   constructor(props) {

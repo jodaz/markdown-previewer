@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ComponentHeader from './ComponentHeader';
 
-const Previewer = (props) => {
-  return(
-    <div id="previewer" className="col-md-12">
-      <ComponentHeader name='Previewer' onClick={props.toggle} icon={props.icon}/>
-      <div id="preview" 
-        className={props.componentStyles}
-        dangerouslySetInnerHTML={props.data}>
+class Previewer extends Component {
+  render() {
+    return(
+      <div id="previewer" className="col-md-12">
+        <ComponentHeader name='Previewer' onClick={this.props.toggle} icon={this.props.icon}/>
+        <div id="preview" 
+          className={this.props.componentStyles}
+          dangerouslySetInnerHTML={this.props.data}>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Previewer;

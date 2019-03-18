@@ -3,7 +3,6 @@ import './App.css';
 import marked from 'marked';
 import AppHeader from './components/AppHeader';
 import Editor from './components/Editor';
-import ComponentHeader from './components/ComponentHeader';
 import Previewer from './components/Previewer';
 
 class App extends Component {

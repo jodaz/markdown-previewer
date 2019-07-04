@@ -1,62 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
 import marked from 'marked';
-
-const Editor = (props) => {
-  return(
-    <div id="editor" className="col-md-12">
-      <ComponentHeader name={'Editor'} onClick={props.toggle} icon={props.icon}/>
-      <textarea id="editor" className={props.componentStyles}
-        value={props.markdown}
-        onChange={props.onChange}
-      />
-    </div>
-  );
-};
-
-const Previewer = (props) => {
-  return(
-    <div id="previewer" className="col-md-12">
-      <ComponentHeader name='Previewer' onClick={props.toggle} icon={props.icon}/>
-      <div id="preview" 
-        className={props.componentStyles}
-        dangerouslySetInnerHTML={props.data}>
-      </div>
-    </div>
-  );
-}
-
-
-const ComponentHeader = (props) => {
-  return(
-    <div className="bar-toggle" onClick={props.onClick}>
-      <div className="text-wrapper">
-        <h2 className="text-center">{props.name}</h2>
-      </div>
-      <i className={props.icon}></i>
-    </div>
-  );
-}
-
-const AppHeader = () => {
-  return(
-    <div className="col header">
-      <h1 className="text-center">Markdown Previewer</h1>
-    </div>
-  );
-}
+import AppHeader from './components/AppHeader';
+import Editor from './components/Editor';
+import Previewer from './components/Previewer';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      markdown: placeholder,
-      toggleEditor: true,
-      togglePreviewer: true
+      markdown: placeholder
     };
 
-    this.toggleEditor = this.toggleEditor.bind(this);
-    this.togglePreviewer = this.togglePreviewer.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -65,18 +20,6 @@ class App extends Component {
       markdown: event.target.value,
     });
   }
-
-  toggleEditor() {
-    this.setState( state => ({
-      toggleEditor: !state.toggleEditor
-    }));
-  }
-
-  togglePreviewer() {
-    this.setState( state => ({
-      togglePreviewer: !state.togglePreviewer
-    }));
-  }
   
   getRawHtml() {
     let rawHtml = marked(this.state.markdown, {sanitize: true});
@@ -84,15 +27,6 @@ class App extends Component {
   }
 
   render() {
-    const togEditor = 
-      this.state.toggleEditor ? 'editor' : 'editor maximized';
-    const togPreviewer = 
-      this.state.togglePreviewer ? 'previewer' : 'previewer maximized';
-    const togEditorIcon =
-      this.state.toggleEditor ? 'fas fa-chevron-down' : 'fas fa-minus';
-    const togPreviewerIcon =
-      this.state.togglePreviewer ? 'fas fa-chevron-down' : 'fas fa-minus';
-
     return (
       <div className="container h-100">
         <AppHeader />
@@ -100,15 +34,9 @@ class App extends Component {
           <Editor
             markdown={this.state.markdown}
             onChange={this.handleChange}
-            toggle={this.toggleEditor}
-            componentStyles={togEditor}
-            icon={togEditorIcon}
           />
           <Previewer 
-            data={this.getRawHtml()} 
-            toggle={this.togglePreviewer}
-            componentStyles={togPreviewer}
-            icon={togPreviewerIcon}
+            data={this.getRawHtml()}
           />
         </div>
       </div>

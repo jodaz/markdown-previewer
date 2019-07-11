@@ -2,7 +2,7 @@ import chnToggler from '../utils/chnToggler';
 import { UPDATE_PLACEHOLDER, TOGGLE_COMP_HEADER } from '../actions/types';
 
 const placeholder = 
-`# Welcome to my React Markdown Previewer!
+`# Welcome to my Markdown Previewer!
 
 ## This is a sub-heading...
 ### And here's some other cool stuff:
@@ -46,7 +46,7 @@ And here. | Okay. | I think we get it.
 - Even if you use dashes or asterisks.
 * And last but not least, let's not forget embedded images:
 
-![React Logo w/ Text](https://goo.gl/Umyytc)`
+![React Logo w/ Text](./awesome.gif)`
 
 const toggle = {
   'editor': false,

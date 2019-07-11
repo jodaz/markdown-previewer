@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 class Previewer extends Component {
+  
   compileMarkdown() {
     let markdown = marked(this.props.rawText, {sanitize: true})
 

@@ -1,4 +1,4 @@
-import { UPDATE_PLACEHOLDER, TOGGLE_EDITOR } from './types';
+import { UPDATE_PLACEHOLDER, TOGGLE_COMP_HEADER } from './types';
 
 export const updatePlaceholder = (text) => {
   return {
@@ -7,8 +7,9 @@ export const updatePlaceholder = (text) => {
   }
 }
 
-export const toggleEditor = () => {
+export const toggleCompHeader = name => {
   return {
-    type: TOGGLE_EDITOR
+    type: TOGGLE_COMP_HEADER,
+    payload: name
   }
 }

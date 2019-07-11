@@ -1,4 +1,5 @@
-import { UPDATE_PLACEHOLDER, TOGGLE_EDITOR } from '../actions/types';
+import chnToggler from '../utils/chnToggler';
+import { UPDATE_PLACEHOLDER, TOGGLE_COMP_HEADER } from '../actions/types';
 
 const placeholder = 
 `# Welcome to my React Markdown Previewer!
@@ -47,15 +48,27 @@ And here. | Okay. | I think we get it.
 
 ![React Logo w/ Text](https://goo.gl/Umyytc)`
 
+const toggle = {
+  'editor': false,
+  'previewer': false
+}
+
 const initialState = {
-  placeholder
+  placeholder,
+  toggle
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_PLACEHOLDER:
       return {
-        placeholder: action.payload
+        ...state,
+        placeholder: action.payload,
+      }
+    case TOGGLE_COMP_HEADER:
+      return {
+        ...state,
+        toggle: chnToggler(toggle, action.payload)
       }
     default:
       return state;

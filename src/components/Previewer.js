@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 class Previewer extends Component {
-
   compileMarkdown() {
     let markdown = marked(this.props.rawText, {sanitize: true})
 
@@ -17,9 +16,8 @@ class Previewer extends Component {
   render() {
     return(
       <div id="previewer" className="col-md-12">
-        <ComponentHeader 
-          name='Previewer'
-          icon={"remove"}
+        <ComponentHeader
+          name="previewer"
         />
         <div id="preview" 
           className={"previewer"}

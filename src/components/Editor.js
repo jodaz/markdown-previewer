@@ -15,8 +15,7 @@ class Editor extends Component {
     return(
       <div id="editor" className="col-md-12">
         <ComponentHeader
-          name={'Editor'}
-          icon={'fas fa-chevron-down'}
+          name='editor'
         />
         <textarea id="editor" className={'editor'}
           value={this.props.rawText}

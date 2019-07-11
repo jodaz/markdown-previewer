@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 
+import PropTypes from 'prop-types';
+
+import { connect } from 'react-redux';
+import { toggleCompHeader } from '../actions/index';
+
 class ComponentHeader extends Component {
   render() {
     return(
@@ -13,4 +18,17 @@ class ComponentHeader extends Component {
   }
 }
 
-export default ComponentHeader;
+ComponentHeader.propTypes = {
+  name: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired
+}
+
+const mapDispatchToProps = (dispatch, props) => {
+  return {
+    onClick: () => {
+      dispatch(toggleCompHeader(props.name, true))
+    }
+  }
+}
+
+export default connect(null, mapDispatchToProps)(ComponentHeader);

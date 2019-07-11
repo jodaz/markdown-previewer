@@ -1,41 +1,41 @@
 import React, { Component } from 'react';
 import ComponentHeader from './ComponentHeader';
 
-class Previewer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      togglePreviewer: true
-    }
-    this.toggle = this.toggle.bind(this);
-  }
+import marked from 'marked';
 
-  toggle() {
-    this.setState( state => ({
-      togglePreviewer: !state.togglePreviewer
-    }));
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+class Previewer extends Component {
+
+  compileMarkdown() {
+    let markdown = marked(this.props.rawText, {sanitize: true})
+
+    return {__html: markdown}
   }
 
   render() {
-    const togPreviewer = 
-      this.state.togglePreviewer ? 'previewer' : 'previewer maximized';
-    const togPreviewerIcon =
-      this.state.togglePreviewer ? 'fas fa-chevron-down' : 'fas fa-minus';
-      
     return(
       <div id="previewer" className="col-md-12">
         <ComponentHeader 
           name='Previewer'
-          onClick={this.toggle}
-          icon={togPreviewerIcon}
+          icon={"remove"}
         />
         <div id="preview" 
-          className={togPreviewer}
-          dangerouslySetInnerHTML={this.props.data}>
-        </div>
+          className={"previewer"}
+          dangerouslySetInnerHTML={this.compileMarkdown()}
+        />
       </div>
     );
   }
 }
 
-export default Previewer;
+Previewer.propTypes = {
+  rawText: PropTypes.string.isRequired,
+}
+
+const mapStateToProps = state => ({
+  rawText: state.placeholder
+});
+
+export default connect(mapStateToProps, null)(Previewer);

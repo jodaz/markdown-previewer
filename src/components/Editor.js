@@ -12,12 +12,14 @@ class Editor extends Component {
   }
 
   render() {
+    const maximized = this.props.maximized ? 'editor maximized' : 'editor';
+
     return(
       <div id="editor" className="col-md-12">
         <ComponentHeader
           name='editor'
         />
-        <textarea id="editor" className={'editor'}
+        <textarea id="editor" className={maximized}
           value={this.props.rawText}
           onChange={this.handleChange.bind(this)}
         />
@@ -28,11 +30,13 @@ class Editor extends Component {
 
 Editor.propTypes = {
   rawText: PropTypes.string.isRequired,
-  updatePlaceholder: PropTypes.func.isRequired
+  updatePlaceholder: PropTypes.func.isRequired,
+  maximized: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = state => ({
-  rawText: state.placeholder
+  rawText: state.placeholder,
+  maximized: state.toggle.editor
 });
 
 export default connect(mapStateToProps, { updatePlaceholder })(Editor);

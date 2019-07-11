@@ -14,13 +14,15 @@ class Previewer extends Component {
   }
 
   render() {
+    const maximized = this.props.maximized ? 'previewer maximized' : 'previewer';
+
     return(
       <div id="previewer" className="col-md-12">
         <ComponentHeader
           name="previewer"
         />
         <div id="preview" 
-          className={"previewer"}
+          className={maximized}
           dangerouslySetInnerHTML={this.compileMarkdown()}
         />
       </div>
@@ -30,10 +32,12 @@ class Previewer extends Component {
 
 Previewer.propTypes = {
   rawText: PropTypes.string.isRequired,
+  maximized: PropTypes.bool.isRequired
 }
 
 const mapStateToProps = state => ({
-  rawText: state.placeholder
+  rawText: state.placeholder,
+  maximized: state.toggle.previewer
 });
 
 export default connect(mapStateToProps, null)(Previewer);

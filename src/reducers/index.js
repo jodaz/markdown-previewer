@@ -66,6 +66,8 @@ export default (state = initialState, action) => {
         placeholder: action.payload,
       }
     case TOGGLE_COMP_HEADER:
+      // Trigger a toggler update
+      
       return {
         ...state,
         toggle: chnToggler(toggle, action.payload)

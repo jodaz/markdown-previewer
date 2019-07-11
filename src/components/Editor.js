@@ -6,12 +6,15 @@ import { connect } from 'react-redux';
 import { updatePlaceholder } from '../actions/index';
 
 class Editor extends Component {
+  
   handleChange(event) {
+    // Update placeholder
     let input = event.target.value;
     this.props.updatePlaceholder(input);
   };
 
   componentDidMount() {
+    // Load ls and update placeholder
     if (localStorage.markdown) {
       this.props.updatePlaceholder(localStorage.markdown);
     }

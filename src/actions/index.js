@@ -1,6 +1,7 @@
 import { UPDATE_PLACEHOLDER, TOGGLE_COMP_HEADER } from './types';
 
 export const updatePlaceholder = text => {
+  // Set markdown text to ls
   localStorage.setItem('markdown', text);
 
   return {

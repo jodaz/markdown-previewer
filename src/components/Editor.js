@@ -9,6 +9,12 @@ class Editor extends Component {
   handleChange(event) {
     let input = event.target.value;
     this.props.updatePlaceholder(input);
+  };
+
+  componentDidMount() {
+    if (localStorage.markdown) {
+      this.props.updatePlaceholder(localStorage.markdown);
+    }
   }
 
   render() {

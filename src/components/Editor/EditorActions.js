@@ -1,4 +1,4 @@
-import { UPDATE_PLACEHOLDER, TOGGLE_COMP_HEADER } from './types';
+import { UPDATE_PLACEHOLDER } from '../../actions/types';
 
 export const updatePlaceholder = text => {
   // Set markdown text to ls
@@ -7,12 +7,5 @@ export const updatePlaceholder = text => {
   return {
     type: UPDATE_PLACEHOLDER,
     payload: text
-  }
-}
-
-export const toggleCompHeader = name => {
-  return {
-    type: TOGGLE_COMP_HEADER,
-    payload: name
   }
 }

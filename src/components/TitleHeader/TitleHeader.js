@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { toggleCompHeader } from '../../actions/index';
+import { toggleCompHeader } from './TitleHeaderActions';
 
 import './TitleHeader.css';
 

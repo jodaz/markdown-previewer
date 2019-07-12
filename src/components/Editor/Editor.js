@@ -3,7 +3,7 @@ import TitleHeader from '../TitleHeader/TitleHeader';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { updatePlaceholder } from '../../actions/index';
+import { updatePlaceholder } from './EditorActions';
 
 import './Editor.css'
 

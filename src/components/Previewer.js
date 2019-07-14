@@ -18,11 +18,11 @@ class Previewer extends Component {
     const maximized = this.props.maximized ? 'previewer maximized' : 'previewer';
 
     return(
-      <div id="previewer" className="col-md-12">
+      <div id="previewer" className="col-md-6">
         <ComponentHeader
           name="previewer"
         />
-        <div id="preview" 
+        <div
           className={maximized}
           dangerouslySetInnerHTML={this.compileMarkdown()}
         />

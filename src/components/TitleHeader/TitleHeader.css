@@ -1,0 +1,32 @@
+.titleheader {
+  width: 100%;
+  color: var(--text);
+  padding-top: 0.53rem;
+  padding-bottom: 0.43rem;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+}
+  .titleheader .text-wrapper {
+    display: inline-block;
+    padding-left: 1em;
+  }
+  .titleheader h2 {
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+  }
+.titleheader-editor {
+  background-color: var(--toolbar-one);
+}
+.titleheader-previewer {
+  background-color: var(--toolbar-two);
+}
+
+@media (min-width: 600px) {
+  .titleheader .text-wrapper .title {
+    font-size: 1.12em;
+  }
+}

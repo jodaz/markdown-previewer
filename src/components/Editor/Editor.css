@@ -1,0 +1,24 @@
+.editor {
+  height: 300px;
+  width: 100%;
+  font-size: 1em;
+  font-family: "Lato";
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  transition: 0.37s;
+  padding: 1em;
+  margin-bottom: 3em;
+  background: var(--text);
+  color: var(--primary-text);
+  box-shadow: 0px 10px 12px 0px rgba(0,0,0,0.59);
+  overflow: auto;
+  border: 0;
+  resize: none;
+}
+
+@media (min-width: 600px) {
+  .editor {
+    height: 500px;
+    margin: 0;
+  }
+}

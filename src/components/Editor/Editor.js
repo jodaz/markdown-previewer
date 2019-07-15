@@ -23,14 +23,12 @@ class Editor extends Component {
   }
 
   render() {
-    const maximized = this.props.maximized ? 'editor maximized' : 'editor';
+    // const maximized = this.props.maximized ? 'editor maximized' : 'editor';
 
     return(
       <div id="editor" className="col-md-6">
-        <TitleHeader
-          name='editor'
-        />
-        <textarea id="editor" className={maximized}
+        <TitleHeader name="editor"/>
+        <textarea className="editor"
           value={this.props.rawText}
           onChange={this.handleChange.bind(this)}
         />

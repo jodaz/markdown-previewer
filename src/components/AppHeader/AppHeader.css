@@ -1,0 +1,10 @@
+.header {
+  font-family: "Lato", sans-serif;
+  margin-top: 1em;
+  color: var(--text);
+}
+.header h1 {
+  font-weight: 700;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+}

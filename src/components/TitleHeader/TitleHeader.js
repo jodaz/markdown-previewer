@@ -8,10 +8,13 @@ import './TitleHeader.css';
 
 const TitleHeader = ({name, onClick, icon}) => {
   // Stateless component
+  
+  const classNameTitleHeader = "titleheader titleheader-" + name;
+
   return(
-    <div className="bar-toggle" onClick={onClick}>
+    <div className={classNameTitleHeader} onClick={onClick}>
       <div className="text-wrapper">
-        <h2 className="text-center">{name}</h2>
+        <h2 className="title text-center">{name}</h2>
       </div>
       <i className={icon}></i>
     </div>

@@ -1,0 +1,67 @@
+.previewer {
+  height: 300px;
+  width: 100%;
+  font-size: 1em;
+  font-family: "Lato";
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  margin-bottom: 5px;
+  transition: 0.37s;
+  padding: 1em;
+  margin-bottom: 2em;
+  background: var(--text);
+  color: var(--primary-text);
+  box-shadow: 0px 10px 12px 0px rgba(0,0,0,0.59);
+  overflow: auto;
+}
+
+/* Previewer element's styles */
+.previewer p code {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  background-color: var(--divider);
+  color: var(--text-primary);
+  padding: 0.1em 0.35em;
+  border-radius: 2px
+}
+.previewer pre {
+  background-color: var(--text-primary);
+  color: var(--text);
+  padding: 1em 0 1em 1em;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  line-height: 1.65;
+  border-radius: 5px;
+}
+.previewer th {
+  background-color: #d2d7da;
+  padding-left: 0.7em;
+  padding-right: 0.7em;
+  border: 1px solid var(--divider);
+  font-weight: 700;
+}
+.previewer td {
+  padding-left: 0.7em;
+  padding-right: 0.7em;
+  border: 1px solid var(--divider);
+  font-weight: 400;
+}
+.previewer blockquote {
+  font-weight: 300;
+  font-style: italic;
+  padding: 0.9em 0 0.9rem 1em;
+  background-color: var(--divider);
+  border-radius: 3px
+}
+.previewer blockquote p {
+  margin: 0;
+}
+
+@media (min-width: 600px) {
+  .previewer {
+    height: 500px;
+    margin-bottom: 5px;
+  }
+}

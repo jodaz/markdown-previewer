@@ -30,7 +30,7 @@ html, body, div, span {
   --toolbar-one: #751CC9;
   --toolbar-two: #2e294e;
   --text: #f4f4f6;
-  --divider: #BDBDBD;
+  --divider: #dadada;
   --text-primary: #262730;
 }
 
@@ -40,7 +40,6 @@ html, body, div, span {
 body {
   height: 100vh;
   font-family: unset;
-  font-size: 16px;
   background: linear-gradient( -90deg, 
     #b360d1,
     #94abed);
@@ -52,19 +51,4 @@ body {
 .row {
   padding-left: 15px;
   padding-right: 15px;
-}
-.col-md-12 {
-  padding: 0px 0px 17px 0px;
-}
-code, kbd, pre, samp {
-  /*font-family: initial;*/
-}
-@media (min-width: 992px) {
-  .col-lg-6 {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .col-md-12 {
-    padding-bottom: 0px;
-  }
 }

@@ -9,9 +9,9 @@ import './App.css';
 
 const App = () => {
   return (
-    <div className="container h-100">
+    <div className="container">
       <AppHeader />
-      <div className="row h-75 align-items-center">
+      <div className="row">
         <Editor />
         <Previewer />
       </div>

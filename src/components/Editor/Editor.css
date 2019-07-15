@@ -1,12 +1,13 @@
 .editor {
   height: 300px;
   width: 100%;
-  font-size: 1em;
+  font-size: 0.95em;
   font-family: "Lato";
   font-weight: 400;
   letter-spacing: 0.05em;
   transition: 0.37s;
-  padding: 1em;
+  padding-left: 1em;
+  padding-right: 0.3em;
   margin-bottom: 3em;
   background: var(--text);
   color: var(--primary-text);
@@ -14,11 +15,25 @@
   overflow: auto;
   border: 0;
   resize: none;
+  margin-bottom: 30px;
 }
+.editor:focus {
+  outline:none;
+}
+
+/*
+  MEDIA QUERIES
+*/
 
 @media (min-width: 600px) {
   .editor {
-    height: 500px;
+    height: 450px;
     margin: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .editor {
+    height: 600px;
+    font-size: 1em;
   }
 }

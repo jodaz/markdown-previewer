@@ -1,7 +1,7 @@
 .previewer {
   height: 300px;
   width: 100%;
-  font-size: 1em;
+  font-size: 0.95em;
   font-family: "Lato";
   font-weight: 400;
   letter-spacing: 0.01em;
@@ -15,7 +15,9 @@
   overflow: auto;
 }
 
-/* Previewer element's styles */
+/* 
+  Previewer element's styles 
+*/
 .previewer p code {
   font-family: 'Lato', sans-serif;
   font-weight: 700;
@@ -59,9 +61,19 @@
   margin: 0;
 }
 
+/* 
+  MEDIA QUERIES 
+*/
+
 @media (min-width: 600px) {
   .previewer {
-    height: 500px;
+    height: 450px;
     margin-bottom: 5px;
+  }
+}
+@media (min-width: 1200px) {
+  .previewer {
+    height: 600px;
+    font-size: 1em;
   }
 }

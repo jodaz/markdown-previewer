@@ -6,18 +6,18 @@
   cursor: pointer;
   border-radius: 5px 5px 0 0;
 }
-  .titleheader .text-wrapper {
-    display: inline-block;
-    padding-left: 1em;
-  }
-  .titleheader h2 {
-    font-weight: 700;
-    font-size: 1rem;
-    margin: 0;
-    padding: 0;
-    letter-spacing: 1.1px;
-    text-transform: uppercase;
-  }
+.titleheader .text-wrapper {
+  display: inline-block;
+  padding-left: 1em;
+}
+.titleheader h2 {
+  font-weight: 700;
+  font-size: 0.92em;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
 .titleheader-editor {
   background-color: var(--toolbar-one);
 }
@@ -25,8 +25,19 @@
   background-color: var(--toolbar-two);
 }
 
+/*
+  MEDIA QUERIES
+*/
+
 @media (min-width: 600px) {
   .titleheader .text-wrapper .title {
     font-size: 1.12em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+  }
+}
+@media (min-width: 1200px) {
+  .titleheader .text-wrapper .title {
+    font-size: 1.22em;
   }
 }

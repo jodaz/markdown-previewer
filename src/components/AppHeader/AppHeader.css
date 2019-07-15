@@ -1,10 +1,29 @@
 .header {
   font-family: "Lato", sans-serif;
-  margin-top: 1em;
-  color: var(--text);
+  color: var(--text-primary);
+  padding-top: 1em;
+  margin-bottom: 0.7em;
 }
 .header h1 {
+  font-size: 1.2rem;
   font-weight: 700;
-  letter-spacing: 1px;
   word-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+/*
+  MEDIA QUERIES
+*/
+
+@media (min-width: 600px) {
+  .header {
+    padding-top: 2em;
+    margin-bottom: 2em;
+  }
+  .header h1 {
+    font-size: 2.1em;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+  }
 }

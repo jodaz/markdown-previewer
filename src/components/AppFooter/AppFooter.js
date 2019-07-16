@@ -7,7 +7,7 @@ const AppFooter = () => {
     <footer className="col footer">
       <div className="text-center">
         <p>
-          Made by <a href="http://jesuodz.github.io">Jesús Ordosgoitty</a>.
+          <span>Made by</span><a href="http://jesuodz.github.io" target="_blank">Jesús Ordosgoitty</a>
         </p>
       </div>
     </footer>

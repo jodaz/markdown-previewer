@@ -1,2 +1,27 @@
 .footer {
+  display: block;
+  z-index: 1;
+  padding: 0;
+  font-weight: 300;
+  font-size: 0.95em;
+}
+.footer span {
+  display: inline-block;
+  padding: 3px 9px 3px 9px;
+  font-size: 1em;
+  background: var(--text);
+  border-top-left-radius: 5px;
+}
+.footer a {
+  display: inline-block;
+  color: inherit;
+  font-weight: 400;
+  transition: 0.65s;
+  padding: 3px 9px 3px 9px;
+  border-bottom-right-radius: 5px;
+}
+.footer a:hover {
+  background: var(--text-primary);
+  color: var(--divider);
+  text-decoration:none;
 }

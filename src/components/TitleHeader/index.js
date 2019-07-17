@@ -1,24 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import { connect } from 'react-redux';
 import { toggleCompHeader } from './actions';
 
 import './index.css';
 
-const TitleHeader = ({name, onClick, icon}) => {
-  // Stateless component
-  
-  const classNameTitleHeader = "titleheader titleheader-" + name;
-
-  return(
-    <div className={classNameTitleHeader} onClick={onClick}>
-      <div className="text-wrapper">
-        <h2 className="title text-center">{name}</h2>
+class TitleHeader extends Component {
+  render() {
+    const classNameTitleHeader = "titleheader titleheader-" + this.props.name;
+    return(
+      <div className={classNameTitleHeader} onClick={this.props.onClick}>
+        <div className="text-wrapper">
+          <h2 className="title text-center">{this.props.name}</h2>
+        </div>
+        <i className={this.props.icon}></i>
       </div>
-      <i className={icon}></i>
-    </div>
-  );
+    );
+  }
 }
 
 TitleHeader.propTypes = {

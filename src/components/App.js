@@ -1,9 +1,9 @@
 import React from 'react';
 
-import AppHeader from './AppHeader/AppHeader';
-import Editor from './Editor/Editor';
-import Previewer from './Previewer/Previewer';
-import AppFooter from './AppFooter/AppFooter';
+import AppHeader from './AppHeader';
+import Editor from './Editor';
+import Previewer from './Previewer';
+import AppFooter from './AppFooter';
 
 import './App.css';
 

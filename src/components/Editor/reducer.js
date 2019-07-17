@@ -1,5 +1,4 @@
-import chnToggler from '../utils/chnToggler';
-import { UPDATE_PLACEHOLDER, TOGGLE_COMP_HEADER } from '../actions/types';
+import { UPDATE_PLACEHOLDER } from './types';
 
 const placeholder = 
 `# Welcome to my Markdown Previewer!
@@ -48,31 +47,18 @@ And here. | Okay. | I think we get it.
 
 ![Awesome gif w/ Text](./awesome.gif)`
 
-const toggle = {
-  'editor': false,
-  'previewer': false
-}
-
 const initialState = {
-  placeholder,
-  toggle
-};
+  placeholder
+}
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_PLACEHOLDER:
       return {
         ...state,
-        placeholder: action.payload,
-      }
-    case TOGGLE_COMP_HEADER:
-      // Trigger a toggler update
-      
-      return {
-        ...state,
-        toggle: chnToggler(toggle, action.payload)
+        placeholder: action.payload
       }
     default:
       return state;
   }
-};
+}

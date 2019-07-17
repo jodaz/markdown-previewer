@@ -1,4 +1,4 @@
-import { TOGGLE_COMP_HEADER } from '../../actions/types';
+import { TOGGLE_COMP_HEADER } from './types';
 
 export const toggleCompHeader = name => {
   return {

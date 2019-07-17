@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import marked from 'marked';
 
-import TitleHeader from '../TitleHeader/TitleHeader';
+import TitleHeader from '../TitleHeader';
 
-import './Previewer.css';
+import './index.css';
 
 class Previewer extends Component {
   
@@ -37,8 +37,8 @@ Previewer.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  rawText: state.placeholder,
-  maximized: state.toggle.previewer
+  rawText: state.text.placeholder,
+  maximized: state.toggle.titleHeader.previewer
 });
 
 export default connect(mapStateToProps, null)(Previewer);

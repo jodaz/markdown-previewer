@@ -1,4 +1,4 @@
-import { UPDATE_PLACEHOLDER } from '../../actions/types';
+import { UPDATE_PLACEHOLDER } from './types';
 
 export const updatePlaceholder = text => {
   // Set markdown text to ls

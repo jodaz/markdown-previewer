@@ -1,6 +1,19 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import {
+  createStore,
+  applyMiddleware,
+  compose,
+  combineReducers
+} from 'redux';
 import thunk from 'redux-thunk';
-import rootReducer from './reducers';
+
+// Create root reducer
+import placeholderReducer from './components/Editor/reducer';
+import titleHeaderReducer from './components/TitleHeader/reducer';
+
+const rootReducer = combineReducers({
+  text: placeholderReducer,
+  toggle: titleHeaderReducer
+})
 
 export default function configureStore() {
   return createStore(

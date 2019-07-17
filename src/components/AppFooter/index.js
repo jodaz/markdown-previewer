@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './AppFooter.css';
+import './index.css';
 
 const AppFooter = () => {
   return(

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import TitleHeader from '../TitleHeader/TitleHeader';
+import TitleHeader from '../TitleHeader';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { updatePlaceholder } from './EditorActions';
+import { updatePlaceholder } from './actions';
 
-import './Editor.css'
+import './index.css'
 
 class Editor extends Component {
   
@@ -44,8 +44,8 @@ Editor.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  rawText: state.placeholder,
-  maximized: state.toggle.editor
+  rawText: state.text.placeholder,
+  maximized: state.toggle.titleHeader.editor
 });
 
 export default connect(mapStateToProps, { updatePlaceholder })(Editor);

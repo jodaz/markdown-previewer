@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { toggleCompHeader } from './TitleHeaderActions';
+import { toggleCompHeader } from './actions';
 
-import './TitleHeader.css';
+import './index.css';
 
 const TitleHeader = ({name, onClick, icon}) => {
   // Stateless component

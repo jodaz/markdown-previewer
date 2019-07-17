@@ -1,0 +1,1 @@
+export const TOGGLE_COMP_HEADER = 'TOGGLE_COMP_HEADER';

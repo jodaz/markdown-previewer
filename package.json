@@ -3,7 +3,6 @@
   "description": "Markdown previewer app, made for freeCodeCamp",
   "version": "0.1.0",
   "author": "Jesus Ordosgoitty",
-  "private": true,
   "keywords": [
     "freeCodeCamp",
     "markdown-previewer",

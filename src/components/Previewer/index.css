@@ -38,16 +38,18 @@
   line-height: 1.65;
   border-radius: 5px;
 }
+.previewer table {
+  width: 100%;
+  margin: 1em 0;
+}
 .previewer th {
   background-color: #d2d7da;
-  padding-left: 0.7em;
-  padding-right: 0.7em;
+  padding: 0.2em 0.7em;
   border: 1px solid var(--divider);
   font-weight: 700;
 }
 .previewer td {
-  padding-left: 0.7em;
-  padding-right: 0.7em;
+  padding: 0.1em 0.7em;
   border: 1px solid var(--divider);
   font-weight: 400;
 }

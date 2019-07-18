@@ -49,6 +49,15 @@ body {
 
 /* Bootstrap resetters */
 .row {
-  padding-left: 15px;
-  padding-right: 15px;
+  justify-content: center;
+}
+.col-md-4,
+.col-md-6,
+.col-md-8 {
+  align-self: center;
+  transition: 0.7s;
+}
+.col-md-4 .previewer,
+.col-md-4 .editor {
+  height: 100px;
 }

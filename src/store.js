@@ -22,7 +22,7 @@ export default function configureStore() {
       applyMiddleware(thunk),
        // Apply after updating redux-devtools extension package
       // applyMiddleware(thunk),
-      // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )
   );
 }

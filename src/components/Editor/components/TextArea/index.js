@@ -26,13 +26,11 @@ class TextArea extends Component {
 
 TextArea.propTypes = {
   rawText: PropTypes.string.isRequired,
-  updatePlaceholder: PropTypes.func.isRequired,
-  maximized: PropTypes.bool.isRequired
+  updatePlaceholder: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-  rawText: state.text.placeholder,
-  maximized: state.toggle.titleHeader.editor
+  rawText: state.text.placeholder
 });
 
 export default connect(mapStateToProps, { updatePlaceholder })(TextArea);

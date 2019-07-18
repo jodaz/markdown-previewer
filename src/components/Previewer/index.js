@@ -1,18 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Visor from './components/Visor';
 import TitleHeader from '../TitleHeader';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import './index.css';
 
-const Previewer = () => {
-  return(
-    <div id="previewer" className="col-md-6">
-      <TitleHeader
-        name="previewer"
-      />
-      <Visor />
-    </div>
-  );
+class Previewer extends Component {
+
+  render() {
+    const col = this.props.compState ? 'col-md-4' : 'col-md-6';
+
+    return(
+      <div id="previewer" className={col}>
+        <TitleHeader name="previewer" />
+        <Visor />
+      </div>
+    );
+  }
 }
 
-export default Previewer;
+Previewer.propTypes = {
+  compState: PropTypes.bool.isRequired
+};
+
+const mapStateToProps = state => ({
+  compState: state.toggle.titleHeader.previewer
+});
+
+export default connect(mapStateToProps, null)(Previewer);

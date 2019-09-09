@@ -2,7 +2,7 @@
   height: 250px;
   width: 100%;
   font-size: 0.95em;
-  font-family: "Lato";
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   letter-spacing: 0.01em;
   margin-bottom: 5px;
@@ -40,7 +40,7 @@
   padding: 0;
   color: inherit;
   background-color: inherit;
-  font-weight: 300;
+  font-weight: 700;
   letter-spacing: 0.05em;
   line-height: 1.65;
 }
@@ -68,6 +68,9 @@
 }
 .previewer blockquote p {
   margin: 0;
+}
+.previewer strong, b {
+  font-weight: 700;
 }
 
 /* 
